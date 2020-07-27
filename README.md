@@ -1,2 +1,2 @@
-# gateway
-Application to manage the gatways and its peripheral devices.
+# Gateways
+Application to manage the gateways and its peripheral devices.
