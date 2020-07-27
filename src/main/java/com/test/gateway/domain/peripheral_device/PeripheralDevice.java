@@ -4,6 +4,7 @@ import com.test.gateway.core.validation.Common;
 import com.test.gateway.core.validation.OnUpdate;
 import com.test.gateway.domain.gateway.Gateway;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,6 +27,7 @@ import java.time.LocalDate;
 @Getter
 @NoArgsConstructor
 @Setter
+@Builder
 @Table(name = "peripheral_device")
 public class PeripheralDevice implements Serializable {
 

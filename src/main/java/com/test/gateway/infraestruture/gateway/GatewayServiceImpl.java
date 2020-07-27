@@ -15,7 +15,7 @@ import java.math.BigInteger;
 public class GatewayServiceImpl extends ServiceBaseImpl<Gateway, Integer, GatewayDTO, GatewayResource, GatewayFactory, IGatewayRepository> implements
         IGatewayService {
 
-    protected GatewayServiceImpl(IGatewayRepository repository, GatewayFactory factory, GatewayValidationService validator) {
+    public GatewayServiceImpl(IGatewayRepository repository, GatewayFactory factory, GatewayValidationService validator) {
         super(repository, factory, validator);
     }
 

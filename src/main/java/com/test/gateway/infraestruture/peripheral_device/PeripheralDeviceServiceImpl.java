@@ -16,7 +16,7 @@ public class PeripheralDeviceServiceImpl extends
 
     private final IGatewayService gatewayService;
 
-    protected PeripheralDeviceServiceImpl(IPeripheralDeviceRepository repository, PeripheralDeviceFactory factory,
+    public PeripheralDeviceServiceImpl(IPeripheralDeviceRepository repository, PeripheralDeviceFactory factory,
             PeripheralDeviceValidationService validator, IGatewayService gatewayService) {
         super(repository, factory, validator);
         this.gatewayService = gatewayService;

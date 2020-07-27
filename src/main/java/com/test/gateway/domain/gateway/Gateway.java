@@ -5,6 +5,7 @@ import com.test.gateway.core.validation.OnUpdate;
 import com.test.gateway.core.validation.UniqueField;
 import com.test.gateway.domain.peripheral_device.PeripheralDevice;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +29,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @Setter
+@Builder
 @Table(name = "gateway")
 @UniqueField(service = IGatewayService.class, fieldName = Gateway_.UNIQUE_SERIAL_NUMBER, fieldIdName = Gateway_.ID, groups = Common.class, message = "validation.error.gateway.duplicate.unique.serial.number")
 public class Gateway implements Serializable {
