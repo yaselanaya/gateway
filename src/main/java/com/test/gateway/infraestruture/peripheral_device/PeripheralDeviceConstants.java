@@ -10,4 +10,7 @@ public class PeripheralDeviceConstants {
     public static final String BASE_PATH = "/devices";
 
     public static final String MAPPING_GET_BY_ID = "/{id}";
+
+    /* Filter */
+    public static final String FILTER_GATEWAY_ID = "gatewayId";
 }

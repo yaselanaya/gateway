@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "bac76608-b7af-47e8-9ba7-d7ff1990f298",
+		"name": "Gateway Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gateway endpoints",
+			"item": [
+				{
+					"name": "List all gateways",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter gateways list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways?data=%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22uniqueSerialNumber%22%2C%20%22operator%22%3A%22EQUALITY%22%2C%20%22value%22%3A%22DR763523%22%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22uniqueSerialNumber%22%2C%20%22operator%22%3A%22EQUALITY%22%2C%20%22value%22%3A%22DR763523%22%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D"
+								}
+							]
+						},
+						"description": "Lists the gateway with the uniqueSerialNumber DR763523\nfilter apply: {\"search\": \"\",\"filters\":[{\"field\":\"uniqueSerialNumber\", \"operator\":\"EQUALITY\", \"value\":\"DR763523\"}],\"pageable\":{\"page\":0,\"size\":10}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter gateways list with contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways?data=%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22uniqueSerialNumber%22%2C%20%22operator%22%3A%22CONTAINS%22%2C%20%22value%22%3A%22DR%22%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22uniqueSerialNumber%22%2C%20%22operator%22%3A%22CONTAINS%22%2C%20%22value%22%3A%22DR%22%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D"
+								}
+							]
+						},
+						"description": "Filter the list of gateways, get all gateways that the uniqueSerialNumber contains \"DR\" string.\napply filter: {\"search\": \"\",\"filters\":[{\"field\":\"uniqueSerialNumber\", \"operator\":\"CONTAINS\", \"value\":\"DR\"}],\"pageable\":{\"page\":0,\"size\":10}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways",
+								"1"
+							]
+						},
+						"description": "Get the gateway with the id 1."
+					},
+					"response": []
+				},
+				{
+					"name": "Save a gateway",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ip\": \"152.23.45.24\",\r\n  \"name\": \"third gateway\",\r\n  \"uniqueSerialNumber\": \"DR253241\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							]
+						},
+						"description": "Save a gateway"
+					},
+					"response": []
+				},
+				{
+					"name": "Error saving a gateway",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ip\": \"152.23.45.24\",\r\n  \"name\": \"third gateway\",\r\n  \"uniqueSerialNumber\": \"DR253241\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							]
+						},
+						"description": "Error saving a gateway beacuse the dulicate serial number."
+					},
+					"response": []
+				},
+				{
+					"name": "Update a gateway",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"ip\": \"152.20.20.30\",\r\n  \"name\": \"firts gateway\",\r\n  \"uniqueSerialNumber\": \"DR763567\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							]
+						},
+						"description": "Request to update a gateway"
+					},
+					"response": []
+				},
+				{
+					"name": "Error updating a gateway",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"ip\": \"152.20.20.500\",\r\n  \"name\": \"firts gateway\",\r\n  \"uniqueSerialNumber\": \"DR763567\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways"
+							]
+						},
+						"description": "Validation error updating a gateway, the ip value is not valid."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a gateway",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/gateways/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gateways",
+								"3"
+							]
+						},
+						"description": "Request to delete a gateway."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "peripheral device",
+			"item": [
+				{
+					"name": "List all peripheral devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						},
+						"description": "Request to list all peripheral devices."
+					},
+					"response": []
+				},
+				{
+					"name": "List all the peripheral devices order by asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices?data=%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%2C%22orders%22%3A%5B%7B%22direction%22%3A%22ASC%22%2C%22property%22%3A%22uid%22%7D%5D%7D%7D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%2C%22orders%22%3A%5B%7B%22direction%22%3A%22ASC%22%2C%22property%22%3A%22uid%22%7D%5D%7D%7D"
+								}
+							]
+						},
+						"description": "Request to list all the peripheral devices order by asc.\napply filter: {\"search\": \"\",\"filters\":[],\"pageable\":{\"page\":0,\"size\":10,\"orders\":[{\"direction\":\"ASC\",\"property\":\"uid\"}]}}"
+					},
+					"response": []
+				},
+				{
+					"name": "List all devices associated to the gateway wit id 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices?data=%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22gatewayId%22%2C%20%22operator%22%3A%22EQUALITY%22%2C%20%22value%22%3A1%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							],
+							"query": [
+								{
+									"key": "data",
+									"value": "%7B%22search%22%3A%20%22%22%2C%22filters%22%3A%5B%7B%22field%22%3A%22gatewayId%22%2C%20%22operator%22%3A%22EQUALITY%22%2C%20%22value%22%3A1%7D%5D%2C%22pageable%22%3A%7B%22page%22%3A0%2C%22size%22%3A10%7D%7D"
+								}
+							]
+						},
+						"description": "List all devices associated to the gateway wit id 1\napply filter: {\"search\": \"\",\"filters\":[{\"field\":\"gatewayId\", \"operator\":\"EQUALITY\", \"value\":1}],\"pageable\":{\"page\":0,\"size\":10}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id a device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"1"
+							]
+						},
+						"description": "Request to find the device with the id 1."
+					},
+					"response": []
+				},
+				{
+					"name": "Save a peripheral device",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendor\": \"vendor six\",\r\n  \"createdDate\": \"2020-07-28\",\r\n  \"status\": true,\r\n  \"gatewayId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						},
+						"description": "Request to save a device"
+					},
+					"response": []
+				},
+				{
+					"name": "Upadte a device",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uid\": 6,\r\n  \"vendor\": \"vendor six\",\r\n  \"createdDate\": \"2020-07-28\",\r\n  \"status\": false,\r\n  \"gatewayId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices"
+							]
+						},
+						"description": "Request to update the device."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/devices/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"6"
+							]
+						},
+						"description": "Delete the device of the id 6."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

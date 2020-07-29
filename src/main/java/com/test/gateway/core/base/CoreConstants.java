@@ -31,7 +31,7 @@ public class CoreConstants {
 
     public static final String CUSTOM_PAGEABLE_SWAGGER_FILTERS_SORTS_SEARCH_OPTIONS = "The filters, sorts and search options.";
 
-    public static final String CUSTOM_PAGEABLE_SWAGGER_EXAMPLE = "{\"search\": \"\",\"filters\":[{\"field\":\"fieldName\", \"operator\":\"EQUALITY\", \"value\":\"fieldValue\"}],\"pageable\":{\"page\":0,\"size\":200,\"orders\":[{\"direction\":\"DESC\",\"property\":\"propertyName\"}]}}";
+    public static final String CUSTOM_PAGEABLE_SWAGGER_EXAMPLE = "{\"search\": \"\",\"filters\":[{\"field\":\"fieldName\", \"operator\":\"EQUALITY\", \"value\":\"fieldValue\"}],\"pageable\":{\"page\":0,\"size\":10,\"orders\":[{\"direction\":\"DESC\",\"property\":\"propertyName\"}]}}";
 
     /* Others */
     static final String DOT = ".";
