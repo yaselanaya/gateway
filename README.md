@@ -16,7 +16,7 @@ _Application to manage the gateways and its peripheral devices._
 
 - Was used the flyway to create the tables of the gateways and the peripheral devices and insert the default data to use it, 
 when the application runs, the three scripts in the **"db.migration"** path are executed creating the tables and inserting the data, 
-is important note that the database has to be created before running the application, the database name must be equal to the database 
+is important to note that the database has to be created before running the application, the database name must be equal to the database 
 name set in the application.properties file, before running the application, the user must configure the data source parameters
 with the custom configuration of its workspace.
 
@@ -25,7 +25,7 @@ to access to the swagger the user has to put the URL **"http://localhost:8080/sw
 the user will see the API documentation and it can test the application.
 
 - Was used the Apache Maven to the automated build, to compile the application execute **"mvn clean package"** and 
-in the **"target"** path execute the jar with the command "java **-jar gateway-0.0.1-SNAPSHOT.jar"**.
+in the **"target"** path execute the jar with the command **"java -jar gateway-0.0.1-SNAPSHOT.jar"**.
 
 - In the **"postman_collection"** path of the project, there is a JSON file called **"Gateway Application.postman_collection.json"** 
 with the collection of the requests to test in Postman, import the file, and executed in order of the appear.
